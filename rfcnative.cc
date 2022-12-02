@@ -76,7 +76,7 @@ Napi::Object ProcessOP8(const Napi::CallbackInfo &info)
     Napi::Array not_found = Napi::Array::New(env);
     Napi::Array presences = Napi::Array::New(env);
 
-    std::map<std::string, Napi::Object> members_by_id;
+    std::unordered_map<std::string, Napi::Object> members_by_id;
 
     for (uint32_t i = 0; i < members.Length(); i++)
     {
