@@ -12,6 +12,7 @@ export interface reqGuildMembersArgs {
     user_ids: string[],
     guild_id: string[],
     presences: boolean,
+    query: string,
 }
 
 export function processOP8(data: reqGuildMembersArgs): reqGuildMembersResults

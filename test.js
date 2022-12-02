@@ -1,11 +1,11 @@
-const hello = require('./build/Release/rfcnative.node');
+const rfcNative = require('./index.js');
 
 
 const uids = ["0", "1", "350350353", "002141242"];
 
 const stressful1 = [...uids, ...uids, ...uids, ...uids];
 
-console.log(hello.process_op8({
+console.log(rfcNative.processOP8({
     discord_members: [{
         id: "0",
         nickname: "test",
@@ -15,6 +15,17 @@ console.log(hello.process_op8({
             discriminator: "1",
             premium_since: new Date().toISOString(),
         }
+    }, {
+        id: "1",
+        nickname: "amogus",
+        user: {
+            id: "1",
+            username: "amogus",
+            discriminator: "1",
+            premium_since: new Date().toISOString(),
+        }
     }],
-    user_ids: [...stressful1, ...stressful1, ...stressful1],
+    user_ids: uids,
+    presences: false,
+    query: "amog",
 }));

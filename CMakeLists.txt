@@ -7,7 +7,7 @@ cmake_minimum_required(VERSION 3.0)
 project(rfcnative)
 
 # Build a shared library named after the project from the files in `src/`
-file(GLOB SOURCE_FILES "*.cc" "*.hh" "*.cpp")
+file(GLOB SOURCE_FILES "*.cc" "*.hh" "*.cpp" "rfcnative.cc" "util.cc" "util.h")
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES})
 
 # Gives our library file a .node extension without any "lib" prefix
