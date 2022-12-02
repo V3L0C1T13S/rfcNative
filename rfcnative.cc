@@ -13,6 +13,7 @@ struct GuildMemberArgs
 {
     Napi::Array discord_members;
     Napi::Array user_ids;
+    Napi::Array guild_id;
     Napi::Boolean presences;
 };
 
@@ -66,7 +67,9 @@ Napi::Object ProcessOP8(const Napi::CallbackInfo &info)
         if (it != members_by_id.end())
         {
             discord_members.Set(discord_members.Length(), it->second);
-        } else {
+        }
+        else
+        {
             not_found.Set(not_found.Length(), user_id);
         }
     }
